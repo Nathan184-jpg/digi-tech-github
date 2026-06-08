@@ -8,8 +8,9 @@
 [node name="Node2D" type="Node2D" parent="." unique_id=331015874]
 script = ExtResource("1_tumq0")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1850940290]
+zoom = Vector2(5.98, 5.98)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=713834438]
 z_index = 1
-position = Vector2(576.44446, 326.75)
-scale = Vector2(6.0046296, 6.0046296)
 texture = ExtResource("2_k5f4k")
