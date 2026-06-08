@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://qhtmy0ar2pdc"]
+
+[ext_resource type="Script" uid="uid://0asgmsuyhybs" path="res://Scripts/manager.gd" id="1_tumq0"]
+[ext_resource type="Texture2D" uid="uid://qel0d5siqsiq" path="res://Assets/gumballmayhembackground.png" id="2_k5f4k"]
+
+[node name="Node2D" type="Node2D" unique_id=1348326413]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=331015874]
+script = ExtResource("1_tumq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=713834438]
+z_index = 1
+position = Vector2(576.44446, 326.75)
+scale = Vector2(6.0046296, 6.0046296)
+texture = ExtResource("2_k5f4k")
