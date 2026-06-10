@@ -5,7 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://qel0d5siqsiq" path="res://Assets/gumballmayhembackground.png" id="2_k5f4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6phgx"]
-size = Vector2(191.5, 18)
+size = Vector2(191.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81xng"]
+size = Vector2(20, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkje"]
+size = Vector2(213, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f350"]
+size = Vector2(20, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c0lf"]
+size = Vector2(233, 20)
 
 [node name="Node2D" type="Node2D" unique_id=1348326413]
 
@@ -25,5 +37,21 @@ position = Vector2(-1, 0)
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1650540752]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1418416971]
-position = Vector2(0.25, 45)
+position = Vector2(0.25, 44)
 shape = SubResource("RectangleShape2D_6phgx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2088280439]
+position = Vector2(-107, 0)
+shape = SubResource("RectangleShape2D_81xng")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=327316702]
+position = Vector2(-10.5, -64)
+shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=347544400]
+position = Vector2(106, -10)
+shape = SubResource("RectangleShape2D_0f350")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1605817958]
+position = Vector2(-0.5, 64)
+shape = SubResource("RectangleShape2D_8c0lf")
