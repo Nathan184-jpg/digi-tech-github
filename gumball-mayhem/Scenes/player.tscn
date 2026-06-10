@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cor4d16husfxq" path="res://Assets/gamecharacterrr.png" id="2_cvnsp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-radius = 13.0
-height = 32.0
+radius = 12.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6t5aa"]
 animations = [{
@@ -19,8 +18,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
-radius = 13.0
-height = 36.0
+radius = 12.0
+height = 28.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1566663453]
 script = ExtResource("1_v0iea")
@@ -31,7 +30,8 @@ script = ExtResource("1_v0iea")
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1774681423]
-scale = Vector2(0.5833333, 0.5416667)
+position = Vector2(0, -2.3841858e-07)
+scale = Vector2(0.5208333, 0.48363099)
 sprite_frames = SubResource("SpriteFrames_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941496516]
