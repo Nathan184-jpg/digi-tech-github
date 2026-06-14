@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0u4kjcvef4vt" path="res://Scenes/enemy.tscn" id="4_81xng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6phgx"]
-size = Vector2(191.5, 20)
+size = Vector2(191.5, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81xng"]
 size = Vector2(20, 108)
@@ -38,16 +38,17 @@ zoom = Vector2(5.98, 5.98)
 z_index = 1
 texture = ExtResource("2_k5f4k")
 
-[node name="CharacterBody2D" parent="Sprite2D" unique_id=1566663453 instance=ExtResource("1_6phgx")]
+[node name="CharacterBody2D" parent="Sprite2D" unique_id=1566663453 node_paths=PackedStringArray("health_ui") instance=ExtResource("1_6phgx")]
 position = Vector2(-1, 0)
+health_ui = NodePath("../../CanvasLayer/ProgressBar")
 
 [node name="CharacterBody2D2" parent="Sprite2D" unique_id=525281359 instance=ExtResource("4_81xng")]
-position = Vector2(55, -5)
+position = Vector2(-57, -4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1650540752]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1418416971]
-position = Vector2(0.25, 44)
+position = Vector2(0.25, 45.5)
 shape = SubResource("RectangleShape2D_6phgx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2088280439]
@@ -67,15 +68,19 @@ position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_8c0lf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=995240818]
-visible = false
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1769183313]
-visible = false
-offset_left = -96.0
-offset_top = 44.0
-offset_right = -59.0
-offset_bottom = 54.0
+anchors_preset = -1
+anchor_left = -0.083000004
+anchor_top = 0.109234564
+anchor_right = 0.06115835
+anchor_bottom = 0.1771358
+offset_left = 96.616005
+offset_top = 523.216
+offset_right = 133.616
+offset_bottom = 533.216
 theme_override_styles/background = SubResource("StyleBoxFlat_6phgx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_81xng")
 max_value = 10.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true

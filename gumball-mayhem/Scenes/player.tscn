@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dyoiv8v204i6"]
 
 [ext_resource type="Script" uid="uid://dptwpce63pa32" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://bais6u7y6mwen" path="res://Scenes/bullet.tscn" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://cor4d16husfxq" path="res://Assets/gamecharacterrr.png" id="2_cvnsp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
@@ -21,8 +22,13 @@ animations = [{
 radius = 12.0
 height = 28.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1566663453]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1566663453 node_paths=PackedStringArray("sprite", "pivot", "bullet_spawn", "bullet_timer")]
 script = ExtResource("1_v0iea")
+sprite = NodePath("AnimatedSprite2D")
+pivot = NodePath("Node2D")
+bullet_spawn = NodePath("Node2D/Marker2D")
+bullet_scene = ExtResource("2_6t5aa")
+bullet_timer = NodePath("Timer")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=442018278]
 
@@ -37,4 +43,14 @@ sprite_frames = SubResource("SpriteFrames_6t5aa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941496516]
 shape = SubResource("CapsuleShape2D_v0iea")
 
+[node name="Node2D" type="Node2D" parent="." unique_id=447055944]
+
+[node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1867695509]
+position = Vector2(17, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=556730911]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_bullet_cooldown"]

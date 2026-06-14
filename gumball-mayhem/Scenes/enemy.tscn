@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0u4kjcvef4vt"]
 
 [ext_resource type="Script" uid="uid://c5sj5ng10kle8" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="PackedScene" uid="uid://dffnbt8tly3rv" path="res://Scenes/gumball_bullet.tscn" id="2_287tu"]
 [ext_resource type="Texture2D" uid="uid://ds2bcijfinpdb" path="res://Assets/gumboss.png" id="2_afpow"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1f0kj"]
@@ -22,8 +23,11 @@ animations = [{
 radius = 39.0
 height = 94.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=525281359]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=525281359 node_paths=PackedStringArray("bullet_spawn", "bullet_timer")]
 script = ExtResource("1_1f0kj")
+bullet_spawn = NodePath("Pivot/Marker2D")
+bullet_scene = ExtResource("2_287tu")
+bullet_timer = NodePath("Pivot/Timer")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=812794600]
 
@@ -37,4 +41,16 @@ sprite_frames = SubResource("SpriteFrames_287tu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
 shape = SubResource("CapsuleShape2D_afpow")
 
+[node name="Pivot" type="Node2D" parent="." unique_id=44058075]
+
+[node name="Marker2D" type="Marker2D" parent="Pivot" unique_id=637452192]
+position = Vector2(0, 28)
+scale = Vector2(-2.0799997, 1)
+gizmo_extents = 17.0
+
+[node name="Timer" type="Timer" parent="Pivot" unique_id=351787851]
+wait_time = 1.0499999999999998
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Pivot/Timer" to="." method="_on_timer_timeout"]
