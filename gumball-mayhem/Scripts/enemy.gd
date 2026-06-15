@@ -23,7 +23,12 @@ func _process(delta: float) -> void:
 func take_damage() -> void:
 	if health > 1: 
 		health -= 1
-		health_ui.value = health
+		#health_ui.value = health
+	
+		
+func _damage(body: Node2D) -> void:
+	if body is CharacterBody2D: 
+		get_tree().call_deferred("reload_current_scene") 
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
