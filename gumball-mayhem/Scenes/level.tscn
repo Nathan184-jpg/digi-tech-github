@@ -39,11 +39,11 @@ z_index = 1
 texture = ExtResource("2_k5f4k")
 
 [node name="CharacterBody2D" parent="Sprite2D" unique_id=1566663453 node_paths=PackedStringArray("health_ui") instance=ExtResource("1_6phgx")]
-position = Vector2(36, 0)
+position = Vector2(-62, 0)
 health_ui = NodePath("../../CanvasLayer/ProgressBar")
 
 [node name="CharacterBody2D2" parent="Sprite2D" unique_id=525281359 instance=ExtResource("4_81xng")]
-position = Vector2(-46, -9)
+position = Vector2(50, -9)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1650540752]
 

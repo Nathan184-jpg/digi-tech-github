@@ -25,7 +25,6 @@ func take_damage() -> void:
 		health -= 1
 		#health_ui.value = health
 	
-		
 func _damage(body: Node2D) -> void:
 	if body is CharacterBody2D: 
 		get_tree().call_deferred("reload_current_scene") 
@@ -37,6 +36,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 func _on_timer_timeout() -> void:
 	var bullet = bullet_scene.instantiate() 
+	bullet.direction = -1
 	bullet.global_position = bullet_spawn.global_position 
 	add_sibling(bullet) 
 	
