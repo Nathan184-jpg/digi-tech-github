@@ -22,8 +22,9 @@ var health: int = 10
 
 
 func _ready() -> void:
-	health_ui.max_value = health
-	health_ui.value = health
+	if not health_ui == null:
+		health_ui.max_value = health
+		health_ui.value = health
 	
 
 func _physics_process(delta: float) -> void:

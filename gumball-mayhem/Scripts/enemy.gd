@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 4
+var health = 100
 
 @export var bullet_spawn: Marker2D
 @export var bullet_scene: PackedScene 
@@ -23,16 +23,15 @@ func _process(delta: float) -> void:
 func take_damage() -> void:
 	if health > 1: 
 		health -= 1
-		#health_ui.value = health
+	else:
+		queue_free()
 	
 func _damage(body: Node2D) -> void:
 	if body is CharacterBody2D: 
 		get_tree().call_deferred("reload_current_scene") 
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-			body.take_damage()
-			queue_free()
+	pass
 	
 func _on_timer_timeout() -> void:
 	var bullet = bullet_scene.instantiate() 
