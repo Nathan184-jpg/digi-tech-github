@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bjph1qleonfb1"]
+
+[ext_resource type="Script" uid="uid://bmsusxfids22" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://qel0d5siqsiq" path="res://Assets/gumballmayhembackground.png" id="2_48xlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+
+[node name="Control" type="Control" unique_id=1373261521]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_28flt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=770149503]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_48xlc")
+
+[node name="Label" type="Label" parent="." unique_id=2134514000]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 30.0
+offset_right = 798.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 48
+text = "GUMBALL MAYHEM"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1267385182]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 114.0
+offset_right = 668.0
+offset_bottom = 154.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_48xlc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1261929701]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=470333114]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "START"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1355989854]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "OPTIONS"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1702522270]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "QUIT GAME"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_play"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_quit"]

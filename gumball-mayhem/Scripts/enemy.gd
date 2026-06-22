@@ -6,7 +6,7 @@ var health = 100
 @export var bullet_scene: PackedScene 
 @export var bullet_timer: Timer 
 @export var health_ui: ProgressBar
-
+@export var anim: AnimationPlayer
 
 
 
@@ -17,12 +17,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
+	pass	
 
 func take_damage() -> void:
 	if health > 1: 
 		health -= 1
+		anim.play("hit")
 	else:
 		queue_free()
 	
@@ -37,8 +37,10 @@ func _on_timer_timeout() -> void:
 	var bullet = bullet_scene.instantiate() 
 	bullet.direction = -1
 	bullet.global_position = bullet_spawn.global_position 
-	add_sibling(bullet) 
+	add_sibling(bullet)  
 	
+	
+
 	
 	
 

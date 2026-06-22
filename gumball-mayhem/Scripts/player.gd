@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -200.0
 var double_jump: bool = true
 var score: int = 0 
 var can_shoot: bool = true
-var health: int = 10
+var health: int = 3
 
 
 
@@ -31,8 +31,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	elif is_on_floor() and not double_jump:
-		double_jump = true 
+	#elif is_on_floor() and not double_jump:
+		#double_jump = true 
 	
  
 	
@@ -40,9 +40,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor() or is_on_wall():
 			velocity.y = JUMP_VELOCITY 
-		elif double_jump:
-			velocity.y = JUMP_VELOCITY
-			double_jump = false  
+		#elif double_jump:
+			#velocity.y = JUMP_VELOCITY
+			#double_jump = false  
 
 	if Input.is_action_pressed("ui_down"): 
 		position.y += 1 

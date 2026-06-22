@@ -5,6 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://qel0d5siqsiq" path="res://Assets/gumballmayhembackground.png" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://0u4kjcvef4vt" path="res://Scenes/enemy.tscn" id="4_81xng"]
 
+[sub_resource type="Animation" id="Animation_81xng"]
+resource_name = "fight"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqkje"]
+_data = {
+&"fight": SubResource("Animation_81xng")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6phgx"]
 size = Vector2(191.5, 17)
 
@@ -26,10 +34,18 @@ bg_color = Color(0, 0.16862746, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81xng"]
 bg_color = Color(0, 0.7247871, 0.85999054, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_81xng"]
+
 [node name="Node2D" type="Node2D" unique_id=1348326413]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=331015874]
+[node name="Node2D" type="Node2D" parent="." unique_id=331015874 node_paths=PackedStringArray("fight_ui", "anim")]
 script = ExtResource("1_tumq0")
+fight_ui = NodePath("../CanvasLayer/Label")
+anim = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=960848134]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_wqkje")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1850940290]
 zoom = Vector2(5.98, 5.98)
@@ -43,7 +59,7 @@ position = Vector2(-33, 0)
 health_ui = NodePath("../../CanvasLayer/ProgressBar")
 
 [node name="CharacterBody2D2" parent="Sprite2D" unique_id=525281359 instance=ExtResource("4_81xng")]
-position = Vector2(46, -9)
+position = Vector2(49, -9)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1650540752]
 
@@ -72,8 +88,8 @@ shape = SubResource("RectangleShape2D_8c0lf")
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1769183313]
 anchors_preset = -1
 anchor_left = -0.083000004
-anchor_top = 0.109234564
-anchor_right = 0.06115835
+anchor_top = 0.098432094
+anchor_right = 0.06977778
 anchor_bottom = 0.1771358
 offset_left = 96.616005
 offset_top = 523.216
@@ -84,3 +100,14 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_81xng")
 max_value = 10.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1057247400]
+offset_left = 515.0
+offset_top = 260.0
+offset_right = 894.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 16
+text = "FIGHT!"
+label_settings = SubResource("LabelSettings_81xng")
+
+[connection signal="animation_finished" from="Node2D/AnimationPlayer" to="Node2D" method="_start_fight"]

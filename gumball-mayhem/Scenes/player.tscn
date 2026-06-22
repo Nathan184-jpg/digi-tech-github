@@ -6,6 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 12.0
+height = 28.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6t5aa"]
 animations = [{
@@ -20,7 +21,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
 radius = 12.0
-height = 28.0
+height = 26.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1566663453 node_paths=PackedStringArray("sprite", "pivot", "bullet_spawn", "bullet_timer") groups=["player"]]
 script = ExtResource("1_v0iea")
@@ -46,7 +47,7 @@ shape = SubResource("CapsuleShape2D_v0iea")
 [node name="Node2D" type="Node2D" parent="." unique_id=447055944]
 
 [node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1867695509]
-position = Vector2(17, 0)
+position = Vector2(17, 5)
 
 [node name="Timer" type="Timer" parent="." unique_id=556730911]
 wait_time = 0.2
