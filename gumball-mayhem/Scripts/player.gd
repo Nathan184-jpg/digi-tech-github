@@ -78,11 +78,11 @@ func take_damage() -> void:
 		health -= 1
 		health_ui.value = health
 	else: 
-		get_tree().call_deferred("reload_current_scene")
+		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
  
 func _damage(body: Node2D) -> void:
 	if body is CharacterBody2D: 
-		get_tree().call_deferred("reload_current_scene") 
+		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -7,14 +7,14 @@ var score: int =  0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(0.35).timeout
+	await get_tree().create_timer(0.10).timeout
 	new_fight()
 
 
 func new_fight() -> void:
 	fight_ui.text = "FIGHT!"
 	fight_ui.show()
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(0.50).timeout
 	fight_ui.hide()
 	anim.play("fight") 
 	

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dym0nylcoe3us"]
+
+[ext_resource type="Script" uid="uid://dkg3osp7erjo6" path="res://Scripts/defeat.gd" id="1_xhb0w"]
+
+[node name="Control" type="Control" unique_id=1745587870]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xhb0w")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=161828153]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0.50677365, 0.031331267, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=905738061]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 36.0
+offset_right = 810.0
+offset_bottom = 231.0
+theme_override_font_sizes/font_size = 120
+text = "DEFEAT"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=2087303693]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 215.0
+offset_right = 683.0
+offset_bottom = 287.0
+theme_override_font_sizes/font_size = 40
+text = "RETRY"
+
+[connection signal="pressed" from="Button" to="." method="_retry"]

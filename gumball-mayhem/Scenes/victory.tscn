@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d4irixl0lnsc5"]
+
+[ext_resource type="Script" uid="uid://bqxanfgwpefds" path="res://Scripts/victory.gd" id="1_1fp7o"]
+
+[node name="Control" type="Control" unique_id=1309243418]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1145.0
+offset_bottom = 647.0
+script = ExtResource("1_1fp7o")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=743470802]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0, 0.5995882, 0.599588, 1)
+
+[node name="Label" type="Label" parent="." unique_id=348187088]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 60.0
+offset_right = 854.0
+offset_bottom = 393.0
+theme_override_font_sizes/font_size = 120
+text = "VICTORY
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=165539639]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 231.0
+offset_right = 737.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 40
+text = "PLAY AGAIN?"
+
+[connection signal="pressed" from="Button" to="." method="_retry"]
