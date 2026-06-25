@@ -5,3 +5,9 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=1079729258]
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 23.0
+text = "OPTIONS"

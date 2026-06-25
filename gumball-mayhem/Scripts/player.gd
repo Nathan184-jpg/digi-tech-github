@@ -38,11 +38,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):
-		if is_on_floor() or is_on_wall():
+		if is_on_floor():
 			velocity.y = JUMP_VELOCITY 
-		#elif double_jump:
-			#velocity.y = JUMP_VELOCITY
-			#double_jump = false  
+
 
 	if Input.is_action_pressed("ui_down"): 
 		position.y += 1 
@@ -78,11 +76,11 @@ func take_damage() -> void:
 		health -= 1
 		health_ui.value = health
 	else: 
-		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
+		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
  
 func _damage(body: Node2D) -> void:
 	if body is CharacterBody2D: 
-		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
+		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

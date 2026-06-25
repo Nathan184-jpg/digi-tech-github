@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dghv6k64brilm" path="res://Assets/orangegumball.png" id="7_1aq5i"]
 [ext_resource type="Texture2D" uid="uid://bdjw66q02comq" path="res://Assets/pinkgumball.png" id="8_48fa8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_exob2"]
-size = Vector2(15, 14)
+[sub_resource type="CircleShape2D" id="CircleShape2D_eof54"]
+radius = 9.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kpstx"]
 animations = [{
@@ -54,15 +54,12 @@ offset_bottom = 7.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1114250699]
 visible = false
 position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_exob2")
+shape = SubResource("CircleShape2D_eof54")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1397904842]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766141161]
-sprite_frames = SubResource("SpriteFrames_kpstx")
-
-[node name="Redgumball" type="Sprite2D" parent="." unique_id=583975072]
 visible = false
-position = Vector2(-5.9604645e-08, 1.4210855e-14)
-scale = Vector2(0.8958333, 0.8958333)
-texture = ExtResource("2_o5gib")
+sprite_frames = SubResource("SpriteFrames_kpstx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
