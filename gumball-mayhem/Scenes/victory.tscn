@@ -11,7 +11,8 @@ script = ExtResource("1_1fp7o")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=743470802]
 layout_mode = 0
-offset_right = 1153.0
+offset_left = 1.0
+offset_right = 1154.0
 offset_bottom = 647.0
 color = Color(0, 0.5995882, 0.599588, 1)
 
@@ -44,5 +45,15 @@ offset_bottom = 359.0
 theme_override_font_sizes/font_size = 25
 text = "RETURN TO MENU"
 
+[node name="Button3" type="Button" parent="." unique_id=640538359]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 379.0
+offset_right = 740.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 25
+text = "QUIT GAME"
+
 [connection signal="pressed" from="Button" to="." method="_retry"]
 [connection signal="pressed" from="Button2" to="." method="_return_to_menu"]
+[connection signal="pressed" from="Button3" to="." method="_quit"]
