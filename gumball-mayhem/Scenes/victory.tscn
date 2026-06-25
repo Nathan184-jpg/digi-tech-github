@@ -18,9 +18,9 @@ color = Color(0, 0.5995882, 0.599588, 1)
 [node name="Label" type="Label" parent="." unique_id=348187088]
 layout_mode = 0
 offset_left = 324.0
-offset_top = 60.0
+offset_top = 20.0
 offset_right = 854.0
-offset_bottom = 393.0
+offset_bottom = 353.0
 theme_override_font_sizes/font_size = 120
 text = "VICTORY
 "
@@ -29,10 +29,20 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="." unique_id=165539639]
 layout_mode = 0
 offset_left = 436.0
-offset_top = 231.0
+offset_top = 189.0
 offset_right = 737.0
-offset_bottom = 308.0
-theme_override_font_sizes/font_size = 40
+offset_bottom = 266.0
+theme_override_font_sizes/font_size = 25
 text = "PLAY AGAIN?"
 
+[node name="Button2" type="Button" parent="." unique_id=1248039018]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 287.0
+offset_right = 741.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 25
+text = "RETURN TO MENU"
+
 [connection signal="pressed" from="Button" to="." method="_retry"]
+[connection signal="pressed" from="Button2" to="." method="_return_to_menu"]

@@ -1,13 +1,46 @@
 [gd_scene format=3 uid="uid://cy3cc2kyscu7u"]
 
+[ext_resource type="Script" uid="uid://yml6kovujoyo" path="res://Scripts/options.gd" id="1_4tmxy"]
+[ext_resource type="Texture2D" uid="uid://qel0d5siqsiq" path="res://Assets/gumballmayhembackground.png" id="1_prnvy"]
+
 [node name="Control" type="Control" unique_id=1569153152]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_4tmxy")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1058090334]
+position = Vector2(576, 324)
+scale = Vector2(6.004629, 6.0046287)
+texture = ExtResource("1_prnvy")
 
 [node name="Label" type="Label" parent="." unique_id=1079729258]
 layout_mode = 0
-offset_right = 81.0
-offset_bottom = 23.0
+offset_left = 436.0
+offset_top = 63.0
+offset_right = 770.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 70
 text = "OPTIONS"
+
+[node name="Button" type="Button" parent="." unique_id=543228786]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 169.0
+offset_right = 744.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 40
+text = "CONTROLS"
+
+[node name="Button2" type="Button" parent="." unique_id=1851395797]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 430.0
+offset_right = 743.0
+offset_bottom = 493.0
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+
+[connection signal="pressed" from="Button" to="." method="_controls"]
+[connection signal="pressed" from="Button2" to="." method="_back"]

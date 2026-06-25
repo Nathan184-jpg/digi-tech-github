@@ -1,45 +1,9 @@
 [gd_scene format=3 uid="uid://dffnbt8tly3rv"]
 
 [ext_resource type="Script" uid="uid://ca4pry5sbecsr" path="res://Scripts/gumball_bullet.gd" id="1_exob2"]
-[ext_resource type="Texture2D" uid="uid://cryktfm0asls5" path="res://Assets/redgumball.png" id="2_o5gib"]
-[ext_resource type="Texture2D" uid="uid://csxgvlqc385gc" path="res://Assets/greengumball.png" id="3_eof54"]
-[ext_resource type="Texture2D" uid="uid://bcec8l010dp0r" path="res://Assets/bluegumball.png" id="4_dplw1"]
-[ext_resource type="Texture2D" uid="uid://dahsjsyvj2cx8" path="res://Assets/purplegumball.png" id="5_lox2g"]
-[ext_resource type="Texture2D" uid="uid://bsqlnq7gwvo1f" path="res://Assets/yellowgumball.png" id="6_sfhod"]
-[ext_resource type="Texture2D" uid="uid://dghv6k64brilm" path="res://Assets/orangegumball.png" id="7_1aq5i"]
-[ext_resource type="Texture2D" uid="uid://bdjw66q02comq" path="res://Assets/pinkgumball.png" id="8_48fa8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eof54"]
 radius = 9.5
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kpstx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_o5gib")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_eof54")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_dplw1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_lox2g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_sfhod")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_1aq5i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_48fa8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Area2D" type="Area2D" unique_id=1453545441]
 script = ExtResource("1_exob2")
@@ -57,9 +21,5 @@ position = Vector2(-0.5, 0)
 shape = SubResource("CircleShape2D_eof54")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1397904842]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766141161]
-visible = false
-sprite_frames = SubResource("SpriteFrames_kpstx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

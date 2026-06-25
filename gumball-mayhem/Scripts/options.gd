@@ -11,15 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _play() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/level.tscn")
-	
-	
+func _controls() -> void:
+	get_tree().change_scene_to_file("res://Scenes/controls.tscn")
 
 
-func _quit() -> void:
-	get_tree().quit()
-
-
-func _options() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/options.tscn")
+func _back() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

@@ -34,4 +34,14 @@ offset_bottom = 287.0
 theme_override_font_sizes/font_size = 40
 text = "RETRY"
 
+[node name="Button2" type="Button" parent="." unique_id=1325104873]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 308.0
+offset_right = 683.0
+offset_bottom = 380.0
+theme_override_font_sizes/font_size = 25
+text = "RETURN TO MENU"
+
 [connection signal="pressed" from="Button" to="." method="_retry"]
+[connection signal="pressed" from="Button2" to="." method="_return_to_menu"]
