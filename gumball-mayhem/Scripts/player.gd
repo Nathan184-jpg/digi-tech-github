@@ -9,6 +9,7 @@ var double_jump: bool = true
 var score: int = 0 
 var can_shoot: bool = true
 var health: int = 3
+var lock: = false
 
 
 
@@ -45,14 +46,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_down"): 
 		position.y += 1 
 
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("ui_left", "ui_right") 
 	if direction:
-		velocity.x = direction * SPEED
-		$AnimatedSprite2D.animation = "default"
-		if direction == -1:
-			$AnimatedSprite2D.flip_h = true
-		else: 
-			$AnimatedSprite2D.flip_h = false
+		if not lock:
+			velocity.x = lerp(velocity.x, direction * SPEED, 0.2)
+			$AnimatedSprite2D.animation = "default"
+			if direction == -1:
+				$AnimatedSprite2D.flip_h = true
+			else: 
+				$AnimatedSprite2D.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		

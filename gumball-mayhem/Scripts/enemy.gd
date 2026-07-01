@@ -2,8 +2,11 @@ extends CharacterBody2D
 
 var health = 100
 
-@export var bullet_spawn: Marker2D
-@export var bullet_scene: PackedScene 
+@export var gumball_bullet_spawn: Marker2D
+@export var coin_bullet_spawn: Marker2D
+
+@export var gumball_bullet_scene: PackedScene 
+@export var coin_bullet_scene: PackedScene
 @export var bullet_timer: Timer 
 @export var health_ui: ProgressBar
 @export var anim: AnimationPlayer
@@ -33,15 +36,16 @@ func _damage(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass
 	
-func _on_timer_timeout() -> void:
-	var bullet = bullet_scene.instantiate() 
+func _on_gumball_timer_timeout() -> void:
+	var bullet = gumball_bullet_scene.instantiate()
 	bullet.direction = -1
-	bullet.global_position = bullet_spawn.global_position 
+	bullet.global_position = gumball_bullet_spawn.global_position 
 	add_sibling(bullet)  
+		
 	
-	
-
-	
-	
-
+func _on_coin_bullet_timer_timeout() -> void:
+	var bullet = coin_bullet_scene.instantiate() 
+	bullet.direction = -1
+	bullet.global_position = coin_bullet_spawn.global_position 
+	add_sibling(bullet)  
 	

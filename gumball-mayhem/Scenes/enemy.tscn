@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://bhncq1ytg170r" path="res://Scenes/boss_flash.gdshader" id="1_0830c"]
 [ext_resource type="PackedScene" uid="uid://dffnbt8tly3rv" path="res://Scenes/gumball_bullet.tscn" id="2_287tu"]
 [ext_resource type="Texture2D" uid="uid://ds2bcijfinpdb" path="res://Assets/gumboss.png" id="2_afpow"]
+[ext_resource type="PackedScene" uid="uid://c8xyr1nr31f24" path="res://Scenes/coin_bullet.tscn" id="4_0830c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_287tu"]
 shader = ExtResource("1_0830c")
@@ -69,12 +70,14 @@ _data = {
 &"hit": SubResource("Animation_0830c")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=525281359 node_paths=PackedStringArray("bullet_spawn", "bullet_timer", "anim") groups=["enemy"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=525281359 node_paths=PackedStringArray("gumball_bullet_spawn", "coin_bullet_spawn", "bullet_timer", "anim") groups=["enemy"]]
 material = SubResource("ShaderMaterial_287tu")
 script = ExtResource("1_1f0kj")
-bullet_spawn = NodePath("Pivot/Marker2D")
-bullet_scene = ExtResource("2_287tu")
-bullet_timer = NodePath("Pivot/Timer")
+gumball_bullet_spawn = NodePath("Pivot/GumballBulletSpawn")
+coin_bullet_spawn = NodePath("Pivot/CoinBulletSpawn")
+gumball_bullet_scene = ExtResource("2_287tu")
+coin_bullet_scene = ExtResource("4_0830c")
+bullet_timer = NodePath("Pivot/GumballTimer")
 anim = NodePath("AnimationPlayer")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=812794600]
@@ -93,13 +96,21 @@ shape = SubResource("CapsuleShape2D_afpow")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=44058075]
 
-[node name="Marker2D" type="Marker2D" parent="Pivot" unique_id=637452192]
+[node name="GumballBulletSpawn" type="Marker2D" parent="Pivot" unique_id=637452192]
 position = Vector2(0, 37)
 scale = Vector2(-2.0799997, 1)
 gizmo_extents = 17.0
 
-[node name="Timer" type="Timer" parent="Pivot" unique_id=351787851]
-wait_time = 0.798
+[node name="CoinBulletSpawn" type="Marker2D" parent="Pivot" unique_id=1682885192]
+position = Vector2(0, 20)
+scale = Vector2(4.326399, 1)
+gizmo_extents = 17.0
+
+[node name="GumballTimer" type="Timer" parent="Pivot" unique_id=351787851]
+autostart = true
+
+[node name="CoinTimer" type="Timer" parent="Pivot" unique_id=821335832]
+wait_time = 4.0
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=850639984]
@@ -107,4 +118,6 @@ libraries/ = SubResource("AnimationLibrary_ghaa6")
 autoplay = &"RESET"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pivot/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Pivot/GumballTimer" to="." method="_on_gumball_timer_timeout"]
+[connection signal="timeout" from="Pivot/GumballTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Pivot/CoinTimer" to="." method="_on_coin_bullet_timer_timeout"]
