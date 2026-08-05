@@ -87,11 +87,12 @@ shape = SubResource("CapsuleShape2D_1f0kj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=134449628]
 material = SubResource("ShaderMaterial_0830c")
-position = Vector2(-2.2737368e-13, 0.9999999)
+position = Vector2(0.25000763, 1.25)
 scale = Vector2(0.75390625, 0.75390625)
 sprite_frames = SubResource("SpriteFrames_287tu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
+position = Vector2(0.25000763, 0.25)
 shape = SubResource("CapsuleShape2D_afpow")
 
 [node name="Pivot" type="Node2D" parent="." unique_id=44058075]
@@ -102,7 +103,7 @@ scale = Vector2(-2.0799997, 1)
 gizmo_extents = 17.0
 
 [node name="CoinBulletSpawn" type="Marker2D" parent="Pivot" unique_id=1682885192]
-position = Vector2(0, 20)
+position = Vector2(4.7683716e-07, -1)
 scale = Vector2(4.326399, 1)
 gizmo_extents = 17.0
 
@@ -118,6 +119,6 @@ libraries/ = SubResource("AnimationLibrary_ghaa6")
 autoplay = &"RESET"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Pivot/GumballTimer" to="." method="_on_gumball_timer_timeout"]
 [connection signal="timeout" from="Pivot/GumballTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Pivot/GumballTimer" to="." method="_on_gumball_timer_timeout"]
 [connection signal="timeout" from="Pivot/CoinTimer" to="." method="_on_coin_bullet_timer_timeout"]

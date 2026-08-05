@@ -38,6 +38,7 @@ bg_color = Color(0, 0.7247871, 0.85999054, 1)
 font_size = 340
 
 [node name="Node2D" type="Node2D" unique_id=1348326413]
+rotation = 0.0007406076
 
 [node name="Node2D" type="Node2D" parent="." unique_id=331015874 node_paths=PackedStringArray("fight_ui", "anim")]
 script = ExtResource("1_tumq0")
