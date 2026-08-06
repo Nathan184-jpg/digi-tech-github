@@ -99,11 +99,12 @@ shape = SubResource("CapsuleShape2D_afpow")
 
 [node name="GumballBulletSpawn" type="Marker2D" parent="Pivot" unique_id=637452192]
 position = Vector2(0, 37)
+rotation = -0.0024409366
 scale = Vector2(-2.0799997, 1)
 gizmo_extents = 17.0
 
 [node name="CoinBulletSpawn" type="Marker2D" parent="Pivot" unique_id=1682885192]
-position = Vector2(4.7683716e-07, -1)
+position = Vector2(0, 21)
 scale = Vector2(4.326399, 1)
 gizmo_extents = 17.0
 

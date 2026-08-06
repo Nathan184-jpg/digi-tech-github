@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dptwpce63pa32" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://bais6u7y6mwen" path="res://Scenes/bullet.tscn" id="2_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://cor4d16husfxq" path="res://Assets/gamecharacterrr.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://tpm07jno0bjs" path="res://Assets/crouchanim0000.png" id="3_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://cd28it2nm6pyv" path="res://Assets/framewalk0001.png" id="3_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://gelxdpf4y6da" path="res://Assets/framewalk0002.png" id="4_3smsa"]
+[ext_resource type="Texture2D" uid="uid://c8xrus543qasl" path="res://Assets/crouchanim0001.png" id="4_gymyn"]
+[ext_resource type="Texture2D" uid="uid://ctdch08l4aqcl" path="res://Assets/framewalk0004.png" id="5_8erm5"]
+[ext_resource type="Texture2D" uid="uid://c8r8ovuu28d3s" path="res://Assets/framewalk0000.png" id="6_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 12.0
@@ -12,10 +17,35 @@ height = 28.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cvnsp")
+"texture": ExtResource("3_tx1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gymyn")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x3wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3smsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8erm5")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x3wgy")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -37,9 +67,11 @@ bullet_timer = NodePath("Timer")
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1774681423]
-position = Vector2(0, -2.3841858e-07)
+position = Vector2(4, -0.99999994)
 scale = Vector2(0.5208333, 0.48363099)
 sprite_frames = SubResource("SpriteFrames_6t5aa")
+animation = &"Crouch"
+frame_progress = 0.25828198
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941496516]
 shape = SubResource("CapsuleShape2D_v0iea")

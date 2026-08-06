@@ -61,7 +61,7 @@ position = Vector2(-33, 0)
 health_ui = NodePath("../../CanvasLayer/ProgressBar")
 
 [node name="CharacterBody2D2" parent="Sprite2D" unique_id=525281359 instance=ExtResource("4_81xng")]
-position = Vector2(49, -9)
+position = Vector2(49.993336, -9.037026)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1650540752]
 
