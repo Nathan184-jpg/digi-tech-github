@@ -70,8 +70,8 @@ shape = SubResource("CapsuleShape2D_cvnsp")
 position = Vector2(4, -0.99999994)
 scale = Vector2(0.5208333, 0.48363099)
 sprite_frames = SubResource("SpriteFrames_6t5aa")
-animation = &"Crouch"
-frame_progress = 0.25828198
+animation = &"Walking"
+frame_progress = 0.9284393
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=941496516]
 shape = SubResource("CapsuleShape2D_v0iea")
@@ -79,7 +79,7 @@ shape = SubResource("CapsuleShape2D_v0iea")
 [node name="Node2D" type="Node2D" parent="." unique_id=447055944]
 
 [node name="Marker2D" type="Marker2D" parent="Node2D" unique_id=1867695509]
-position = Vector2(17, 5)
+position = Vector2(15, 8)
 
 [node name="Timer" type="Timer" parent="." unique_id=556730911]
 wait_time = 0.2

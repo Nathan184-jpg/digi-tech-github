@@ -1,18 +1,23 @@
 extends Area2D
 
-var speed: float = 400 
-var direction: int = -1 
+var direction: int = -1
+var distance = 150
+var time = 2.0
+var horizontal_velocity = distance / time
+var coin_gravity = 500
+var velocity: Vector2 
+const speed = 400
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass	
+	velocity.y = -100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	move_local_x(speed * direction * delta)
-	
-
-
+	velocity.x = horizontal_velocity * direction 
+	velocity.y = velocity.y + coin_gravity
+	position = position + velocity 
 
 
 func _on_body_entered(body: Node2D) -> void:
