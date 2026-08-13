@@ -3,6 +3,8 @@ extends CharacterBody2D
 var health = 100 
 var current_phase = 1
 
+
+
 @export var gumball_bullet_spawn: Marker2D
 @export var coin_bullet_spawn: Marker2D
 
@@ -19,6 +21,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass;
+				
 	if health <= 75 and current_phase == 1: 
 		current_phase = 2  
 		print ("Phase 2 Begin")
@@ -41,7 +45,7 @@ func _damage(body: Node2D) -> void:
 		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
+	pass;
 	
 func _on_gumball_timer_timeout() -> void:
 	var bullet = gumball_bullet_scene.instantiate()
@@ -50,8 +54,8 @@ func _on_gumball_timer_timeout() -> void:
 	add_sibling(bullet)  
 		
 func _on_coin_bullet_timer_timeout() -> void:
-	var bullet = coin_bullet_scene.instantiate() 
-	bullet.direction = -1
-	bullet.global_position = coin_bullet_spawn.global_position  
-	add_sibling(bullet)  
-	
+	pass;
+	#var bullet = coin_bullet_scene.instantiate() 
+	#bullet.direction = -1
+	#bullet.global_position = coin_bullet_spawn.global_position  
+	#add_sibling(bullet)  

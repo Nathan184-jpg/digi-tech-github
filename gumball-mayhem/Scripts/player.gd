@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 
 
 	if Input.is_action_pressed("ui_crouch"): 
-		velocity.x = 0
+		velocity.x = 0 
 		position.y += 1
 		$AnimatedSprite2D.animation = "Crouch"
 		$AnimatedSprite2D.play()
