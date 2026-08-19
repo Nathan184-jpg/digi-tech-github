@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed: float = 500 
+var speed: float = 300 
 var direction: int = -1
 
 #@export var = $Sprite2d etc..
@@ -12,7 +12,7 @@ func _ready() -> void:
 #change $sprite2D
 
 func _process(delta: float) -> void:
-	move_local_x(speed * direction * delta)
+	move_local_x(speed * direction * delta) 
 
 
 func _on_body_entered(body: Node2D) -> void:

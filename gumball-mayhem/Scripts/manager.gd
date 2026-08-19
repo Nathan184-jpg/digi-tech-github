@@ -1,6 +1,9 @@
 extends Node2D
 
 var score: int =  0
+var phase: int = 0
+var max_enemies: int = 5
+var current_enemies: int = 0
 
 @export var fight_ui: Label
 @export var anim: AnimationPlayer
@@ -28,5 +31,11 @@ func _process(delta: float) -> void:
 
 
 func _start_fight(anim_name: StringName) -> void:
-	if anim_name == "fight":
-		print("FIGHT!")
+	if anim_name == "new_wave":
+		current_enemies = 0
+		max_enemies = max_enemies * 1.3
+		print(max_enemies)
+		await get_tree().create_timer(3.0).timeout
+
+func start_phase(anim_name: StringName) -> void:
+	pass # Replace with function body.

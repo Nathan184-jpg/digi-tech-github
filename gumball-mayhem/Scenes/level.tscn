@@ -60,8 +60,9 @@ texture = ExtResource("2_k5f4k")
 position = Vector2(-33, 0)
 health_ui = NodePath("../../CanvasLayer/ProgressBar")
 
-[node name="CharacterBody2D2" parent="Sprite2D" unique_id=525281359 instance=ExtResource("4_81xng")]
+[node name="CharacterBody2D2" parent="Sprite2D" unique_id=525281359 node_paths=PackedStringArray("player") instance=ExtResource("4_81xng")]
 position = Vector2(49.993336, -9.037026)
+player = NodePath("../CharacterBody2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1650540752]
 
@@ -112,4 +113,7 @@ theme_override_font_sizes/font_size = 16
 text = "FIGHT!"
 label_settings = SubResource("LabelSettings_81xng")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=136137586]
+
 [connection signal="animation_finished" from="Node2D/AnimationPlayer" to="Node2D" method="_start_fight"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Node2D" method="start_phase"]

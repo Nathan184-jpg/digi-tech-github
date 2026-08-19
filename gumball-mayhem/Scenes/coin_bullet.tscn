@@ -7,16 +7,19 @@
 radius = 6.0
 height = 16.0
 
-[node name="Area2D" type="Area2D" unique_id=239006196]
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1722710108]
+linear_damp_mode = 1
 script = ExtResource("1_3gwmo")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=291875332]
+[node name="Area2D" type="Area2D" parent="." unique_id=239006196]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=291875332]
 position = Vector2(-1.1920929e-07, 0)
 scale = Vector2(0.32210287, 0.43704844)
 texture = ExtResource("2_wp7wc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=811592293]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=811592293]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_2csb5")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
