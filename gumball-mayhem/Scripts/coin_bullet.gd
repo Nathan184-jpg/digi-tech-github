@@ -3,8 +3,7 @@ extends RigidBody2D
 var player: CharacterBody2D
 var target_position: Vector2
 var vertical: float = 350
-#var speed = 100
-
+var speed: float = 190 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +13,7 @@ func _ready() -> void:
 	var initial_horizontal_velocity = -target_position.x / ((-vertical - (discriminant**0.5))/-gravity)
 	linear_velocity.y = -vertical
 	linear_velocity.x = initial_horizontal_velocity
-	print(initial_horizontal_velocity)
+	#print(initial_horizontal_velocity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

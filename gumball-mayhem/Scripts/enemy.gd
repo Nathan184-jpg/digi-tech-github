@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var health = 100 
 var current_phase = 1
+#var phase2_threshold 
 
 @export var gumball_bullet_spawn: Marker2D
 @export var coin_bullet_spawn: Marker2D

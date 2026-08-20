@@ -18,8 +18,10 @@ offset_bottom = 7.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1114250699]
 visible = false
 position = Vector2(-0.5, 0)
+scale = Vector2(0.69, 0.69)
 shape = SubResource("CircleShape2D_eof54")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1397904842]
+scale = Vector2(0.69, 0.69)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

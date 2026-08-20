@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://8nwh54ybcm4t"]
+
+[ext_resource type="Script" uid="uid://di57ajvq3hure" path="res://Scripts/minion_enemies.gd" id="1_odwrp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sj2bi"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mdjnu"]
+radius = 9.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1249900861]
+script = ExtResource("1_odwrp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1123629547]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1105169691]
+shape = SubResource("CircleShape2D_sj2bi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=174896388]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=266062178]
+shape = SubResource("CircleShape2D_mdjnu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

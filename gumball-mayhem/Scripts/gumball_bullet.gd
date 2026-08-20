@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed: float = 300 
+var speed: float = 190 
 var direction: int = -1
 
 #@export var = $Sprite2d etc..

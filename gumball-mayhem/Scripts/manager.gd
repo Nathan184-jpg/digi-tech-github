@@ -5,6 +5,9 @@ var phase: int = 0
 var max_enemies: int = 5
 var current_enemies: int = 0
 
+@export var enemy_timer: Timer
+@export var enemy_spawn: PathFollow2D
+@export var enemy_scene: PackedScene
 @export var fight_ui: Label
 @export var anim: AnimationPlayer
 
@@ -39,3 +42,7 @@ func _start_fight(anim_name: StringName) -> void:
 
 func start_phase(anim_name: StringName) -> void:
 	pass # Replace with function body.
+
+
+func spawn_enemy() -> void:
+	pass;
