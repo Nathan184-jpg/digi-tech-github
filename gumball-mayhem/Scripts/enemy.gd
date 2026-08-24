@@ -6,13 +6,17 @@ var current_phase = 1
 
 @export var gumball_bullet_spawn: Marker2D
 @export var coin_bullet_spawn: Marker2D
+@export var minion_enemies_spawn: Marker2D
+
 
 @export var gumball_bullet_scene: PackedScene 
 @export var coin_bullet_scene: PackedScene
+@export var minion_enemies: PackedScene
 @export var bullet_timer: Timer 
 @export var health_ui: ProgressBar
 @export var anim: AnimationPlayer
 @export var player: CharacterBody2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -58,3 +62,9 @@ func _on_coin_bullet_timer_timeout() -> void:
 	bullet.player = player
 	bullet.global_position = coin_bullet_spawn.global_position  
 	add_sibling(bullet)  
+
+
+func spawn_enemy() -> void:
+	var enemy = minion_enemies.instantiate()
+	get_parent().add_child(enemy)
+	enemy.global_position = minion_enemies_spawn.global_position

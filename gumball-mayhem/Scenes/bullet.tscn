@@ -7,6 +7,8 @@
 size = Vector2(8, 4)
 
 [node name="Area2D" type="Area2D" unique_id=1974902095]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_xjght")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=890891854]

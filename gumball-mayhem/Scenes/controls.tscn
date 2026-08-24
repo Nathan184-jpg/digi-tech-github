@@ -146,4 +146,20 @@ offset_right = 752.0
 offset_bottom = 269.0
 text = "Left Mouse Button"
 
+[node name="Label12" type="Label" parent="." unique_id=1635366636]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 286.0
+offset_right = 516.0
+offset_bottom = 316.0
+text = "Crouch"
+
+[node name="Label13" type="Label" parent="." unique_id=2068433811]
+layout_mode = 0
+offset_left = 665.0
+offset_top = 286.0
+offset_right = 705.0
+offset_bottom = 309.0
+text = "S"
+
 [connection signal="pressed" from="Button" to="." method="_done"]

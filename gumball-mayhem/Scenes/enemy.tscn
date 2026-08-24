@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://bhncq1ytg170r" path="res://Scenes/boss_flash.gdshader" id="1_0830c"]
 [ext_resource type="PackedScene" uid="uid://dffnbt8tly3rv" path="res://Scenes/gumball_bullet.tscn" id="2_287tu"]
 [ext_resource type="Texture2D" uid="uid://ds2bcijfinpdb" path="res://Assets/gumboss.png" id="2_afpow"]
+[ext_resource type="PackedScene" uid="uid://8nwh54ybcm4t" path="res://Scenes/minion_enemies.tscn" id="3_ghaa6"]
 [ext_resource type="PackedScene" uid="uid://c8xyr1nr31f24" path="res://Scenes/coin_bullet.tscn" id="4_0830c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_287tu"]
@@ -70,13 +71,15 @@ _data = {
 &"hit": SubResource("Animation_0830c")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=525281359 node_paths=PackedStringArray("gumball_bullet_spawn", "coin_bullet_spawn", "bullet_timer", "anim") groups=["enemy"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=525281359 node_paths=PackedStringArray("gumball_bullet_spawn", "coin_bullet_spawn", "minion_enemies_spawn", "bullet_timer", "anim") groups=["enemy"]]
 material = SubResource("ShaderMaterial_287tu")
 script = ExtResource("1_1f0kj")
 gumball_bullet_spawn = NodePath("Pivot/GumballBulletSpawn")
 coin_bullet_spawn = NodePath("Pivot/CoinBulletSpawn")
+minion_enemies_spawn = NodePath("MinionEnemiesSpawn")
 gumball_bullet_scene = ExtResource("2_287tu")
 coin_bullet_scene = ExtResource("4_0830c")
+minion_enemies = ExtResource("3_ghaa6")
 bullet_timer = NodePath("Pivot/GumballTimer")
 anim = NodePath("AnimationPlayer")
 
@@ -120,7 +123,16 @@ autostart = true
 libraries/ = SubResource("AnimationLibrary_ghaa6")
 autoplay = &"RESET"
 
+[node name="MinionEnemies" type="Timer" parent="." unique_id=1748073499]
+wait_time = 1.41
+autostart = true
+
+[node name="MinionEnemiesSpawn" type="Marker2D" parent="." unique_id=453399854]
+position = Vector2(0, 50)
+gizmo_extents = 46.1
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Pivot/GumballTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Pivot/GumballTimer" to="." method="_on_gumball_timer_timeout"]
 [connection signal="timeout" from="Pivot/CoinTimer" to="." method="_on_coin_bullet_timer_timeout"]
+[connection signal="timeout" from="MinionEnemies" to="." method="spawn_enemy"]
