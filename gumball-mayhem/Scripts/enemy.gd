@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var health = 100 
 var current_phase = 1
-#var phase2_threshold 
+#var phase2_threshold = 1
 
 @export var gumball_bullet_spawn: Marker2D
 @export var coin_bullet_spawn: Marker2D
@@ -35,7 +35,10 @@ func _process(delta: float) -> void:
 		print ("Phase 3 Begin")
 	if health <= 25 and current_phase == 3: 
 		current_phase = 4 
-		print ("Phase 4 Begin")
+		print ("Phase 4 Begin") 
+	
+	
+
 
 func take_damage() -> void:
 	if health > 1: 
@@ -52,19 +55,23 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass;
 	
 func _on_gumball_timer_timeout() -> void:
-	var bullet = gumball_bullet_scene.instantiate()
-	bullet.direction = -1
-	bullet.global_position = gumball_bullet_spawn.global_position 
-	add_sibling(bullet)  
+	if current_phase == 2  or current_phase == 4: 
+		var bullet = gumball_bullet_scene.instantiate()
+		bullet.direction = -1
+		bullet.global_position = gumball_bullet_spawn.global_position 
+		add_sibling(bullet)  
 		
 func _on_coin_bullet_timer_timeout() -> void:
-	var bullet = coin_bullet_scene.instantiate() 
-	bullet.player = player
-	bullet.global_position = coin_bullet_spawn.global_position  
-	add_sibling(bullet)  
+	if current_phase == 1 or current_phase == 4: 
+		var bullet = coin_bullet_scene.instantiate() 
+		bullet.player = player
+		bullet.global_position = coin_bullet_spawn.global_position  
+		add_sibling(bullet)  
 
 
-func spawn_enemy() -> void:
-	var enemy = minion_enemies.instantiate()
-	get_parent().add_child(enemy)
-	enemy.global_position = minion_enemies_spawn.global_position
+func spawn_enemy() -> void: 
+	if current_phase == 3  or current_phase == 4: 
+		
+		var enemy = minion_enemies.instantiate()
+		get_parent().add_child(enemy)
+		enemy.global_position = minion_enemies_spawn.global_position
