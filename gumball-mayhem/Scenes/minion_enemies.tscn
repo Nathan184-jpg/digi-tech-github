@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8nwh54ybcm4t"]
 
 [ext_resource type="Script" uid="uid://di57ajvq3hure" path="res://Scripts/minion_enemies.gd" id="1_odwrp"]
-[ext_resource type="Texture2D" uid="uid://can45c32fnjeg" path="res://Scenes/mini_enemy.png" id="2_sj2bi"]
+[ext_resource type="Texture2D" uid="uid://can45c32fnjeg" path="res://Assets/mini_enemy.png" id="2_sj2bi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1mb8e"]
 

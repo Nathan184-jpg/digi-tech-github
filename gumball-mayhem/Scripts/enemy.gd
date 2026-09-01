@@ -63,6 +63,7 @@ func _on_gumball_timer_timeout() -> void:
 		
 func _on_coin_bullet_timer_timeout() -> void:
 	if current_phase == 1 or current_phase == 4: 
+		#PLAY ANIMATION
 		var bullet = coin_bullet_scene.instantiate() 
 		bullet.player = player
 		bullet.global_position = coin_bullet_spawn.global_position  

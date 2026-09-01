@@ -60,6 +60,11 @@ position = Vector2(882.75, 328.75)
 scale = Vector2(3.0117188, 3.0117188)
 texture = ExtResource("3_1ehe0")
 
+[node name="Button" type="Button" parent="." unique_id=472458998]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_play"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button3" to="." method="_options"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_quit"]

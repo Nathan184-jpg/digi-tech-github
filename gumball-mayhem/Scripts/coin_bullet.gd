@@ -3,7 +3,7 @@ extends RigidBody2D
 var player: CharacterBody2D
 var target_position: Vector2
 var vertical: float = 350
-var speed: float = 190 
+var speed: float = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

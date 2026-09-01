@@ -3,9 +3,14 @@
 [ext_resource type="Script" uid="uid://c5sj5ng10kle8" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Shader" uid="uid://bhncq1ytg170r" path="res://Scenes/boss_flash.gdshader" id="1_0830c"]
 [ext_resource type="PackedScene" uid="uid://dffnbt8tly3rv" path="res://Scenes/gumball_bullet.tscn" id="2_287tu"]
-[ext_resource type="Texture2D" uid="uid://ds2bcijfinpdb" path="res://Assets/gumboss.png" id="2_afpow"]
 [ext_resource type="PackedScene" uid="uid://8nwh54ybcm4t" path="res://Scenes/minion_enemies.tscn" id="3_ghaa6"]
 [ext_resource type="PackedScene" uid="uid://c8xyr1nr31f24" path="res://Scenes/coin_bullet.tscn" id="4_0830c"]
+[ext_resource type="Texture2D" uid="uid://bv0oyjrrn31y" path="res://Assets/coin_slot_animation0001.png" id="6_haro7"]
+[ext_resource type="Texture2D" uid="uid://b40y0x03xtulu" path="res://Assets/coin_slot_animation0002.png" id="7_56vhr"]
+[ext_resource type="Texture2D" uid="uid://c0dxa2657volk" path="res://Assets/coin_slot_animation0003.png" id="8_ta2yt"]
+[ext_resource type="Texture2D" uid="uid://b2k0ydwg820qf" path="res://Assets/coin_slot_animation0004.png" id="9_m4x7e"]
+[ext_resource type="Texture2D" uid="uid://dsk6dwt4d4a7a" path="res://Assets/coin_slot_animation0005.png" id="10_vt4ob"]
+[ext_resource type="Texture2D" uid="uid://cywwpog5dc1ue" path="res://Assets/Boss.png" id="11_hgeoe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_287tu"]
 shader = ExtResource("1_0830c")
@@ -23,7 +28,30 @@ shader_parameter/active = false
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_afpow")
+"texture": ExtResource("11_hgeoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_haro7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_56vhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ta2yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_m4x7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vt4ob")
+}],
+"loop": true,
+"name": &"Coin Slot ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_hgeoe")
 }],
 "loop": true,
 "name": &"default",
@@ -93,6 +121,8 @@ material = SubResource("ShaderMaterial_0830c")
 position = Vector2(0.25000763, 1.25)
 scale = Vector2(0.75390625, 0.75390625)
 sprite_frames = SubResource("SpriteFrames_287tu")
+animation = &"Coin Slot "
+frame_progress = 0.23735966
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
 position = Vector2(0.25000763, 0.25)
@@ -124,7 +154,7 @@ libraries/ = SubResource("AnimationLibrary_ghaa6")
 autoplay = &"RESET"
 
 [node name="MinionEnemies" type="Timer" parent="." unique_id=1748073499]
-wait_time = 1.722
+wait_time = 1.2999999999999998
 autostart = true
 
 [node name="MinionEnemiesSpawn" type="Marker2D" parent="." unique_id=453399854]
