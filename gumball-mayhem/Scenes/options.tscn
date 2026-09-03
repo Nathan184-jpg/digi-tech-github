@@ -2,6 +2,75 @@
 
 [ext_resource type="Script" uid="uid://yml6kovujoyo" path="res://Scripts/options.gd" id="1_4tmxy"]
 [ext_resource type="Texture2D" uid="uid://qel0d5siqsiq" path="res://Assets/gumballmayhembackground.png" id="1_prnvy"]
+[ext_resource type="FontFile" uid="uid://cyar1dd6caomk" path="res://Assets/Jersey10-Regular.ttf" id="3_qyyw6"]
+[ext_resource type="FontFile" uid="uid://buj1bler3xikl" path="res://Assets/AGENCYB.TTF" id="4_ww8vx"]
+
+[sub_resource type="FontVariation" id="FontVariation_ww8vx"]
+base_font = ExtResource("3_qyyw6")
+
+[sub_resource type="FontVariation" id="FontVariation_kftxf"]
+base_font = ExtResource("4_ww8vx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyyw6"]
+content_margin_left = 16.0
+content_margin_top = 5.0
+content_margin_right = 16.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.35686275, 0.49803922, 0.83137256, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ww8vx"]
+bg_color = Color(0.37981048, 0.37981054, 0.37981036, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.49019608, 0.827451, 0.9882353, 1)
+shadow_size = 6
+
+[sub_resource type="FontVariation" id="FontVariation_663nc"]
+base_font = ExtResource("4_ww8vx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kftxf"]
+content_margin_left = 16.0
+content_margin_top = 5.0
+content_margin_right = 16.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.35686275, 0.49803922, 0.83137256, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvj8k"]
+bg_color = Color(0.37981048, 0.37981054, 0.37981036, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.49019608, 0.827451, 0.9882353, 1)
+shadow_size = 6
 
 [node name="Control" type="Control" unique_id=1569153152]
 layout_mode = 3
@@ -17,30 +86,38 @@ texture = ExtResource("1_prnvy")
 
 [node name="Label" type="Label" parent="." unique_id=1079729258]
 layout_mode = 0
-offset_left = 436.0
+offset_left = 492.0
 offset_top = 63.0
-offset_right = 770.0
+offset_right = 826.0
 offset_bottom = 159.0
-theme_override_font_sizes/font_size = 70
+theme_override_fonts/font = SubResource("FontVariation_ww8vx")
+theme_override_font_sizes/font_size = 65
 text = "OPTIONS"
 
-[node name="Button" type="Button" parent="." unique_id=543228786]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1662610644]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 169.0
-offset_right = 744.0
-offset_bottom = 232.0
+offset_left = 469.0
+offset_top = 179.0
+offset_right = 689.0
+offset_bottom = 381.0
+theme_override_constants/separation = 76
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=543228786]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_kftxf")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qyyw6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ww8vx")
 text = "CONTROLS"
 
-[node name="Button2" type="Button" parent="." unique_id=1851395797]
-layout_mode = 0
-offset_left = 457.0
-offset_top = 430.0
-offset_right = 743.0
-offset_bottom = 493.0
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1851395797]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_663nc")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_kftxf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvj8k")
 text = "BACK"
 
-[connection signal="pressed" from="Button" to="." method="_controls"]
-[connection signal="pressed" from="Button2" to="." method="_back"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_controls"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_back"]
