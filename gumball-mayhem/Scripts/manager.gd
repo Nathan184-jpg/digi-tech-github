@@ -3,7 +3,7 @@ extends Node2D
 var score: int =  0
 var phase: int = 0
 var max_enemies: int = 5
-var current_enemies: int = 0
+var current_enemies: int = 0 
 
 @export var enemy_timer: Timer
 @export var enemy_spawn: PathFollow2D
@@ -14,7 +14,8 @@ var current_enemies: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.10).timeout
-	new_fight()
+	new_fight() 
+
 
 
 func new_fight() -> void:

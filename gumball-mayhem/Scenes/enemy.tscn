@@ -122,7 +122,7 @@ position = Vector2(0.25000763, 1.25)
 scale = Vector2(0.75390625, 0.75390625)
 sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"Coin Slot "
-frame_progress = 0.23735966
+frame_progress = 0.015208628
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
 position = Vector2(0.25000763, 0.25)

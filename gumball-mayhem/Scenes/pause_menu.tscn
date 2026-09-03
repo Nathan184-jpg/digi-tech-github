@@ -113,6 +113,7 @@ text = "Resume"
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer" unique_id=333211231]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 text = "Restart"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=837442444]
