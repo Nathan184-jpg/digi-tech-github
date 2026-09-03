@@ -1,60 +1,19 @@
 [gd_scene format=3 uid="uid://8nwh54ybcm4t"]
 
-[ext_resource type="Shader" uid="uid://6cwmkwbsbqc8" path="res://Scenes/mini_enemies_flash.gdshader" id="1_mdjnu"]
 [ext_resource type="Script" uid="uid://di57ajvq3hure" path="res://Scripts/minion_enemies.gd" id="1_odwrp"]
 [ext_resource type="Texture2D" uid="uid://can45c32fnjeg" path="res://Assets/mini_enemy.png" id="2_sj2bi"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mb8e"]
-shader = ExtResource("1_mdjnu")
-shader_parameter/active = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sj2bi"]
 radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mdjnu"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mdjnu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_sj2bi")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_mdjnu"]
-resource_name = "RESET"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("ShaderMaterial_1mb8e")]
-}
-
-[sub_resource type="Animation" id="Animation_1mb8e"]
-resource_name = "hit"
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ugi1d"]
-_data = {
-&"RESET": SubResource("Animation_mdjnu"),
-&"hit": SubResource("Animation_1mb8e")
-}
-
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1249900861 groups=["enemy", "minion_enemies"]]
-material = SubResource("ShaderMaterial_1mb8e")
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1249900861 node_paths=PackedStringArray("anim", "enemy") groups=["enemy", "minion_enemies"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_odwrp")
+anim = NodePath("")
+enemy = NodePath("Sprite2D")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1123629547]
 visible = false
@@ -80,13 +39,8 @@ offset_right = 8.0
 offset_bottom = -9.0
 show_percentage = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2005891414]
-position = Vector2(0, 1)
-scale = Vector2(0.56, 0.56)
-sprite_frames = SubResource("SpriteFrames_mdjnu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1473893534]
-libraries/ = SubResource("AnimationLibrary_ugi1d")
-autoplay = &"RESET"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2098283168]
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("2_sj2bi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

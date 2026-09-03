@@ -80,7 +80,7 @@ offset_bottom = 40.0
 script = ExtResource("1_4tmxy")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1058090334]
-position = Vector2(576, 324)
+position = Vector2(575, 323)
 scale = Vector2(6.004629, 6.0046287)
 texture = ExtResource("1_prnvy")
 
