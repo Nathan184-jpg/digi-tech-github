@@ -3,6 +3,7 @@ extends CharacterBody2D
 var health = 100 
 var current_phase = 1
 #var phase2_threshold = 1
+var is_dead: bool = false 
 
 @export var gumball_bullet_spawn: Marker2D
 @export var coin_bullet_spawn: Marker2D
@@ -47,10 +48,20 @@ func _process(delta: float) -> void:
 		print ("Phase 4 Begin") 
 	
 func take_damage() -> void:
+	if is_dead: 
+		return 
 	if health > 1: 
 		health -= 1
 		anim.play("hit")
 	else:
+		is_dead = true 
+		health = 0 
+		current_phase = 0
+		set_process(false) 
+		get_tree().call_group("minion_enemies", "queue_free") 
+
+		$AnimatedSprite2D.play("Boss death")
+		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
 		
 func _damage(body: Node2D) -> void:

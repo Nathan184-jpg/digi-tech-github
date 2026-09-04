@@ -40,6 +40,7 @@ offset_bottom = -9.0
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2098283168]
+position = Vector2(0, 1.9999999)
 scale = Vector2(0.62, 0.62)
 texture = ExtResource("2_sj2bi")
 

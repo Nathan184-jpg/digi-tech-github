@@ -171,7 +171,7 @@ position = Vector2(0.25000763, 1.25)
 scale = Vector2(0.75390625, 0.75390625)
 sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"Boss death"
-frame_progress = 0.6570143
+frame_progress = 0.58250237
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
 position = Vector2(0.25000763, 0.25)
@@ -207,7 +207,7 @@ wait_time = 1.2999999999999998
 autostart = true
 
 [node name="MinionEnemiesSpawn" type="Marker2D" parent="." unique_id=453399854]
-position = Vector2(0, 52)
+position = Vector2(0, 56)
 gizmo_extents = 46.1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
