@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://b2k0ydwg820qf" path="res://Assets/coin_slot_animation0004.png" id="9_m4x7e"]
 [ext_resource type="Texture2D" uid="uid://dsk6dwt4d4a7a" path="res://Assets/coin_slot_animation0005.png" id="10_vt4ob"]
 [ext_resource type="Texture2D" uid="uid://cywwpog5dc1ue" path="res://Assets/Boss.png" id="11_hgeoe"]
+[ext_resource type="Texture2D" uid="uid://rpgbis02l21l" path="res://Assets/Phase 2 glass crack.png" id="12_m4x7e"]
+[ext_resource type="Texture2D" uid="uid://dxnhr6jfk0bhx" path="res://Assets/Phase 3 glass crack.png" id="13_vt4ob"]
+[ext_resource type="Texture2D" uid="uid://bomq5cxrrwu8s" path="res://Assets/Phase 4 glass crack.png" id="14_hgeoe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_287tu"]
 shader = ExtResource("1_0830c")
@@ -47,6 +50,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"Coin Slot ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_hgeoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m4x7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vt4ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hgeoe")
+}],
+"loop": true,
+"name": &"Phases - glass crack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -121,8 +141,7 @@ material = SubResource("ShaderMaterial_0830c")
 position = Vector2(0.25000763, 1.25)
 scale = Vector2(0.75390625, 0.75390625)
 sprite_frames = SubResource("SpriteFrames_287tu")
-animation = &"Coin Slot "
-frame_progress = 0.8080818
+animation = &"Phases - glass crack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
 position = Vector2(0.25000763, 0.25)
