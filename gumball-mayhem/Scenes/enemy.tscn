@@ -5,11 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://dffnbt8tly3rv" path="res://Scenes/gumball_bullet.tscn" id="2_287tu"]
 [ext_resource type="PackedScene" uid="uid://8nwh54ybcm4t" path="res://Scenes/minion_enemies.tscn" id="3_ghaa6"]
 [ext_resource type="PackedScene" uid="uid://c8xyr1nr31f24" path="res://Scenes/coin_bullet.tscn" id="4_0830c"]
+[ext_resource type="Texture2D" uid="uid://dh1lxvqbjfk1k" path="res://Assets/enemydeath_anim0000.png" id="6_5xdhn"]
 [ext_resource type="Texture2D" uid="uid://bv0oyjrrn31y" path="res://Assets/coin_slot_animation0001.png" id="6_haro7"]
+[ext_resource type="Texture2D" uid="uid://b1a5adka8qyol" path="res://Assets/enemydeath_anim0001.png" id="7_4jyny"]
 [ext_resource type="Texture2D" uid="uid://b40y0x03xtulu" path="res://Assets/coin_slot_animation0002.png" id="7_56vhr"]
 [ext_resource type="Texture2D" uid="uid://c0dxa2657volk" path="res://Assets/coin_slot_animation0003.png" id="8_ta2yt"]
+[ext_resource type="Texture2D" uid="uid://xkccvps0yys0" path="res://Assets/enemydeath_anim0002.png" id="8_vh8xy"]
 [ext_resource type="Texture2D" uid="uid://b2k0ydwg820qf" path="res://Assets/coin_slot_animation0004.png" id="9_m4x7e"]
+[ext_resource type="Texture2D" uid="uid://b07g5ks686axu" path="res://Assets/enemydeath_anim0003.png" id="9_qjcj6"]
+[ext_resource type="Texture2D" uid="uid://cdw67juu7tgm6" path="res://Assets/enemydeath_anim0004.png" id="10_4ycey"]
 [ext_resource type="Texture2D" uid="uid://dsk6dwt4d4a7a" path="res://Assets/coin_slot_animation0005.png" id="10_vt4ob"]
+[ext_resource type="Texture2D" uid="uid://j7aqsj4fbukq" path="res://Assets/enemydeath_anim0005.png" id="11_8cim4"]
 [ext_resource type="Texture2D" uid="uid://cywwpog5dc1ue" path="res://Assets/Boss.png" id="11_hgeoe"]
 [ext_resource type="Texture2D" uid="uid://rpgbis02l21l" path="res://Assets/Phase 2 glass crack.png" id="12_m4x7e"]
 [ext_resource type="Texture2D" uid="uid://dxnhr6jfk0bhx" path="res://Assets/Phase 3 glass crack.png" id="13_vt4ob"]
@@ -29,6 +35,29 @@ shader_parameter/active = false
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_287tu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5xdhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4jyny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vh8xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qjcj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ycey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8cim4")
+}],
+"loop": true,
+"name": &"Boss death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("11_hgeoe")
@@ -141,7 +170,8 @@ material = SubResource("ShaderMaterial_0830c")
 position = Vector2(0.25000763, 1.25)
 scale = Vector2(0.75390625, 0.75390625)
 sprite_frames = SubResource("SpriteFrames_287tu")
-animation = &"Phases - glass crack"
+animation = &"Boss death"
+frame_progress = 0.6570143
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
 position = Vector2(0.25000763, 0.25)

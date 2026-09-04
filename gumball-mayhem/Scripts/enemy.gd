@@ -20,6 +20,7 @@ var current_phase = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimatedSprite2D.play("default")
 	$AnimatedSprite2D.frame = 0
 
 
@@ -29,16 +30,20 @@ func _process(delta: float) -> void:
 				
 	if health <= 75 and current_phase == 1: 
 		current_phase = 2  
+		$AnimatedSprite2D.animation = ("Phases - glass crack")
 		$AnimatedSprite2D.frame = 1
+		$AnimatedSprite2D.pause()
 		print ("Phase 2 Begin")
 		
 	if health <= 50 and current_phase == 2: 
 		current_phase = 3 
 		$AnimatedSprite2D.frame = 2
+		$AnimatedSprite2D.pause()
 		print ("Phase 3 Begin")
 	if health <= 25 and current_phase == 3: 
 		current_phase = 4 
 		$AnimatedSprite2D.frame = 3
+		$AnimatedSprite2D.pause()
 		print ("Phase 4 Begin") 
 	
 func take_damage() -> void:
