@@ -13,6 +13,7 @@ var lock: = false
 
 
 
+
 @export var sprite: Node 
 @export var label: Label 
 @export var pivot: Node2D
@@ -76,6 +77,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide() 
 	
 func _shoot() -> void:
+
 	var bullet = bullet_scene.instantiate()
 	bullet.rotation = pivot.rotation
 	bullet.global_position = bullet_spawn.global_position
@@ -100,4 +102,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _bullet_cooldown() -> void:
 	can_shoot = true
+
+func get_knockback(enemy_position: Vector2, knockback_strength:float = 350.0) -> void: 
+	lock = true
 	
+	var knockback_direction = enemy_position.direction_to(global_position) 
+	velocity = knockback_direction * knockback_strength 
+		
+	await get_tree().create_timer(0.2).timeout
+	lock = false 
+	
+	take_damage()

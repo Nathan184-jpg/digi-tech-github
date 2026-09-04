@@ -8,8 +8,6 @@ var is_dead: bool = false
 @export var gumball_bullet_spawn: Marker2D
 @export var coin_bullet_spawn: Marker2D
 @export var minion_enemies_spawn: Marker2D
-
-
 @export var gumball_bullet_scene: PackedScene 
 @export var coin_bullet_scene: PackedScene
 @export var minion_enemies: PackedScene
@@ -17,6 +15,9 @@ var is_dead: bool = false
 @export var health_ui: ProgressBar
 @export var anim: AnimationPlayer
 @export var player: CharacterBody2D
+@export var knockback_strength: float = 200.0  
+
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -69,7 +70,8 @@ func _damage(body: Node2D) -> void:
 		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass;
+	if body.has_method("get_knockback"): 
+		body.get_knockback(global_position, knockback_strength)
 	
 func _on_gumball_timer_timeout() -> void:
 	if current_phase == 2  or current_phase == 4: 
