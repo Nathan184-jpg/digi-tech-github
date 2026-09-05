@@ -43,6 +43,9 @@ font_size = 340
 [sub_resource type="FontVariation" id="FontVariation_754fn"]
 base_font = ExtResource("8_bvt00")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvt00"]
+bg_color = Color(0.5752016, 0.5183781, 1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6phgx"]
 size = Vector2(191.5, 17)
 
@@ -157,28 +160,27 @@ label_settings = SubResource("LabelSettings_81xng")
 [node name="PauseButton" type="Button" parent="CanvasLayer/Control" unique_id=1318531775]
 process_mode = 3
 layout_mode = 0
-offset_left = 1086.0
-offset_top = -561.0
-offset_right = 1115.0
+offset_left = 1082.0
+offset_top = -564.0
+offset_right = 1122.0
 offset_bottom = -524.0
 focus_mode = 0
 theme_override_fonts/font = SubResource("FontVariation_754fn")
 theme_override_font_sizes/font_size = 50
-flat = true
+theme_override_styles/hover = SubResource("StyleBoxFlat_bvt00")
 
-[node name="PausePillar" type="ColorRect" parent="CanvasLayer/Control/PauseButton" unique_id=2107206713]
-layout_mode = 0
-offset_left = 17.0
-offset_right = 27.0
-offset_bottom = 34.0
+[node name="PausePillar" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1395343096]
+position = Vector2(72.51001, -29.000002)
+scale = Vector2(0.9398273, 1)
+polygon = PackedVector2Array(-70, 32, -70, 49, -70, 66, -58, 66, -58.000008, 49.028362, -58, 32)
 
-[node name="PausePillar2" type="ColorRect" parent="CanvasLayer/Control/PauseButton" unique_id=544264851]
-layout_mode = 0
-offset_right = 10.0
-offset_bottom = 34.0
+[node name="PausePillar2" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1245281534]
+position = Vector2(81.879395, -29)
+scale = Vector2(0.82550746, 1)
+polygon = PackedVector2Array(-70, 32, -70, 49, -70, 66, -58, 66, -58.000008, 49.028362, -58, 32)
 
 [node name="PauseIconPillar" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1410943437]
-position = Vector2(1, -2)
+position = Vector2(8, 1)
 polygon = PackedVector2Array(-1, 2, -1, 35, 26, 18)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=136137586]
