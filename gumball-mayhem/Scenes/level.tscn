@@ -44,7 +44,7 @@ font_size = 340
 base_font = ExtResource("8_bvt00")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvt00"]
-bg_color = Color(0.5752016, 0.5183781, 1, 1)
+bg_color = Color(0.35686275, 0.49803922, 0.83137256, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6phgx"]
 size = Vector2(191.5, 17)
@@ -75,7 +75,7 @@ position = Vector2(-33, 0)
 health_ui = NodePath("../../CanvasLayer/Control/TextureRect/TextureRect/ProgressBar")
 
 [node name="CharacterBody2D2" parent="Sprite2D" unique_id=525281359 node_paths=PackedStringArray("player") instance=ExtResource("4_81xng")]
-position = Vector2(49.991104, -12.037029)
+position = Vector2(49.99258, -10.037027)
 player = NodePath("../CharacterBody2D")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1650540752]

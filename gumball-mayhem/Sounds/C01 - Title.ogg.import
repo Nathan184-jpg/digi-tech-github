@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgjuceiv1sf7l"
+path="res://.godot/imported/C01 - Title.ogg-c59a4d7c0539c994ebd572fe3e390f3a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/C01 - Title.ogg"
+dest_files=["res://.godot/imported/C01 - Title.ogg-c59a4d7c0539c994ebd572fe3e390f3a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

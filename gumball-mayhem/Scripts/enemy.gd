@@ -64,10 +64,11 @@ func take_damage() -> void:
 		$AnimatedSprite2D.play("Boss death")
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file("res://Scenes/victory.tscn")
-		
+		AudioManager.play_victory_music()
 func _damage(body: Node2D) -> void:
 	if body is CharacterBody2D: 
 		get_tree().change_scene_to_file("res://Scenes/defeat.tscn")
+
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("get_knockback"): 

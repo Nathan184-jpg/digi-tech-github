@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bapnhomq252me"
+path="res://.godot/imported/C06 - Ending.mp3-dff95c8ac18d5b9268c91a92c76715b1.mp3str"
+
+[deps]
+
+source_file="res://Sounds/C06 - Ending.mp3"
+dest_files=["res://.godot/imported/C06 - Ending.mp3-dff95c8ac18d5b9268c91a92c76715b1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

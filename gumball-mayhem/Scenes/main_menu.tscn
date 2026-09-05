@@ -77,10 +77,10 @@ horizontal_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1267385182]
 layout_mode = 0
-offset_left = 1270.0
-offset_top = 193.0
-offset_right = 1498.0
-offset_bottom = 505.0
+offset_left = 1885.0
+offset_top = 160.0
+offset_right = 2113.0
+offset_bottom = 472.0
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=2073681164]
 position = Vector2(928.00006, 330)

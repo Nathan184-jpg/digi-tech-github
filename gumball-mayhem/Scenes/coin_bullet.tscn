@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://6toi4sp2r4i3" path="res://Assets/nathan's coin.png" id="2_wp7wc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2csb5"]
-radius = 6.0
-height = 16.0
+radius = 5.0
+height = 12.0
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1722710108]
 linear_damp_mode = 1
@@ -15,7 +15,7 @@ script = ExtResource("1_3gwmo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=291875332]
 position = Vector2(-1.1920929e-07, 0)
-scale = Vector2(0.32210287, 0.43704844)
+scale = Vector2(0.282, 0.383)
 texture = ExtResource("2_wp7wc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=811592293]

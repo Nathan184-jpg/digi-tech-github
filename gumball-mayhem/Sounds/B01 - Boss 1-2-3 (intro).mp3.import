@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://migy8ua05mo4"
+path="res://.godot/imported/B01 - Boss 1-2-3 (intro).mp3-28cb852f95257ceaf01a341150ab5660.mp3str"
+
+[deps]
+
+source_file="res://Sounds/B01 - Boss 1-2-3 (intro).mp3"
+dest_files=["res://.godot/imported/B01 - Boss 1-2-3 (intro).mp3-28cb852f95257ceaf01a341150ab5660.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci2x85710tu3k"
+path="res://.godot/imported/C02 - Distrurbing Cutscene.mp3-cf85fe562256c893dba74d93d582285a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/C02 - Distrurbing Cutscene.mp3"
+dest_files=["res://.godot/imported/C02 - Distrurbing Cutscene.mp3-cf85fe562256c893dba74d93d582285a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

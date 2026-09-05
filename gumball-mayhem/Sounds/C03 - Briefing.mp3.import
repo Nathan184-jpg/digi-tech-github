@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boinar566hxmi"
+path="res://.godot/imported/C03 - Briefing.mp3-fdaa4101d7ac85b5a6498d9a828836a3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/C03 - Briefing.mp3"
+dest_files=["res://.godot/imported/C03 - Briefing.mp3-fdaa4101d7ac85b5a6498d9a828836a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -15,7 +15,8 @@ var current_enemies: int = 0
 func _ready() -> void:
 	await get_tree().create_timer(0.10).timeout
 	new_fight() 
-
+	AudioManager.play_boss_music()
+	
 
 
 func new_fight() -> void:
