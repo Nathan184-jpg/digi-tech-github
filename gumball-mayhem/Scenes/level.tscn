@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d2h1hyk71qs0b" path="res://Assets/healthbarinside.png" id="6_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://liyy3h8n4r76" path="res://Scenes/pause_menu.tscn" id="7_8c0lf"]
 [ext_resource type="FontFile" uid="uid://cyar1dd6caomk" path="res://Assets/Jersey10-Regular.ttf" id="7_754fn"]
+[ext_resource type="FontFile" uid="uid://baplvwh467sab" path="res://Assets/Helvetica-Bold.ttf" id="8_bvt00"]
 
 [sub_resource type="Animation" id="Animation_81xng"]
 resource_name = "fight"
@@ -38,6 +39,9 @@ base_font = ExtResource("7_754fn")
 [sub_resource type="LabelSettings" id="LabelSettings_81xng"]
 font = SubResource("FontVariation_bvt00")
 font_size = 340
+
+[sub_resource type="FontVariation" id="FontVariation_754fn"]
+base_font = ExtResource("8_bvt00")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6phgx"]
 size = Vector2(191.5, 17)
@@ -91,9 +95,17 @@ shape = SubResource("RectangleShape2D_0f350")
 position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_8c0lf")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2002292475]
+
+[node name="Control" parent="CanvasLayer2" unique_id=741841183 instance=ExtResource("7_8c0lf")]
+offset_top = 1.0
+offset_right = 3.0
+metadata/_edit_use_anchors_ = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=995240818]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1082450741]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_top = 587.0
@@ -102,10 +114,10 @@ offset_bottom = 627.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1304921853]
 layout_mode = 0
-offset_left = -49.000004
-offset_top = -42.000008
-offset_right = 79.0
-offset_bottom = -10.000008
+offset_left = -45.0
+offset_top = -595.0
+offset_right = 83.0
+offset_bottom = -563.0
 scale = Vector2(3.01, 3.01)
 texture = ExtResource("5_0f350")
 
@@ -142,6 +154,33 @@ theme_override_font_sizes/font_size = 16
 text = "FIGHT!"
 label_settings = SubResource("LabelSettings_81xng")
 
+[node name="PauseButton" type="Button" parent="CanvasLayer/Control" unique_id=1318531775]
+process_mode = 3
+layout_mode = 0
+offset_left = 1086.0
+offset_top = -561.0
+offset_right = 1115.0
+offset_bottom = -524.0
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_754fn")
+theme_override_font_sizes/font_size = 50
+flat = true
+
+[node name="PausePillar" type="ColorRect" parent="CanvasLayer/Control/PauseButton" unique_id=2107206713]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 27.0
+offset_bottom = 34.0
+
+[node name="PausePillar2" type="ColorRect" parent="CanvasLayer/Control/PauseButton" unique_id=544264851]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 34.0
+
+[node name="PauseIconPillar" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1410943437]
+position = Vector2(1, -2)
+polygon = PackedVector2Array(-1, 2, -1, 35, 26, 18)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=136137586]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1198456920]
@@ -153,10 +192,7 @@ position = Vector2(0.25, 45.500004)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_6phgx")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2002292475]
-
-[node name="Control" parent="CanvasLayer2" unique_id=741841183 instance=ExtResource("7_8c0lf")]
-
 [connection signal="timeout" from="Node2D/Timer" to="Node2D" method="spawn_enemy"]
 [connection signal="animation_finished" from="Node2D/AnimationPlayer" to="Node2D" method="_start_fight"]
+[connection signal="pressed" from="CanvasLayer/Control/PauseButton" to="CanvasLayer2/Control" method="_on_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Node2D" method="start_phase"]
