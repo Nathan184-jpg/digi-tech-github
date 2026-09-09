@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://baplvwh467sab"
-path="res://.godot/imported/Helvetica-Bold.ttf-90b3beb7257ca55a2eb05f78b7a13d0d.fontdata"
+uid="uid://deicv4w3xgrtm"
+path="res://.godot/imported/29260917085.ttf-4b81e6f52fefdf0fc33f1d7ef95ed4b5.fontdata"
 
 [deps]
 
-source_file="res://Assets/Helvetica-Bold.ttf"
-dest_files=["res://.godot/imported/Helvetica-Bold.ttf-90b3beb7257ca55a2eb05f78b7a13d0d.fontdata"]
+source_file="res://Fonts/29260917085.ttf"
+dest_files=["res://.godot/imported/29260917085.ttf-4b81e6f52fefdf0fc33f1d7ef95ed4b5.fontdata"]
 
 [params]
 

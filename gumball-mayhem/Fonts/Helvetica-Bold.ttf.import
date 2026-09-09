@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://buj1bler3xikl"
-path="res://.godot/imported/AGENCYB.TTF-302ec74be6a6bab39678c1bae01fa3b1.fontdata"
+uid="uid://baplvwh467sab"
+path="res://.godot/imported/Helvetica-Bold.ttf-ed37b660459511bc7c32229082c46eea.fontdata"
 
 [deps]
 
-source_file="res://Assets/AGENCYB.TTF"
-dest_files=["res://.godot/imported/AGENCYB.TTF-302ec74be6a6bab39678c1bae01fa3b1.fontdata"]
+source_file="res://Fonts/Helvetica-Bold.ttf"
+dest_files=["res://.godot/imported/Helvetica-Bold.ttf-ed37b660459511bc7c32229082c46eea.fontdata"]
 
 [params]
 

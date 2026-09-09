@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://yml6kovujoyo" path="res://Scripts/options.gd" id="1_4tmxy"]
 [ext_resource type="Texture2D" uid="uid://qel0d5siqsiq" path="res://Assets/gumballmayhembackground.png" id="1_prnvy"]
-[ext_resource type="FontFile" uid="uid://cyar1dd6caomk" path="res://Assets/Jersey10-Regular.ttf" id="3_qyyw6"]
-[ext_resource type="FontFile" uid="uid://buj1bler3xikl" path="res://Assets/AGENCYB.TTF" id="4_ww8vx"]
+[ext_resource type="FontFile" uid="uid://cyar1dd6caomk" path="res://Fonts/Jersey10-Regular.ttf" id="3_qyyw6"]
+[ext_resource type="FontFile" uid="uid://buj1bler3xikl" path="res://Fonts/AGENCYB.TTF" id="4_ww8vx"]
 
 [sub_resource type="FontVariation" id="FontVariation_ww8vx"]
 base_font = ExtResource("3_qyyw6")

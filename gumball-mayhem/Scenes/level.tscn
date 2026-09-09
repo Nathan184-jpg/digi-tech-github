@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://btl3dsbn2dwqh" path="res://Assets/healthbaroutline.png" id="5_0f350"]
 [ext_resource type="Texture2D" uid="uid://d2h1hyk71qs0b" path="res://Assets/healthbarinside.png" id="6_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://liyy3h8n4r76" path="res://Scenes/pause_menu.tscn" id="7_8c0lf"]
-[ext_resource type="FontFile" uid="uid://cyar1dd6caomk" path="res://Assets/Jersey10-Regular.ttf" id="7_754fn"]
-[ext_resource type="FontFile" uid="uid://baplvwh467sab" path="res://Assets/Helvetica-Bold.ttf" id="8_bvt00"]
+[ext_resource type="FontFile" uid="uid://cyar1dd6caomk" path="res://Fonts/Jersey10-Regular.ttf" id="7_754fn"]
+[ext_resource type="FontFile" uid="uid://baplvwh467sab" path="res://Fonts/Helvetica-Bold.ttf" id="8_bvt00"]
 
 [sub_resource type="Animation" id="Animation_81xng"]
 resource_name = "fight"
@@ -114,6 +114,7 @@ anchors_preset = 0
 offset_top = 587.0
 offset_right = 40.000008
 offset_bottom = 627.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1304921853]
 layout_mode = 0
@@ -168,19 +169,20 @@ focus_mode = 0
 theme_override_fonts/font = SubResource("FontVariation_754fn")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_bvt00")
+flat = true
 
 [node name="PausePillar" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1395343096]
-position = Vector2(72.51001, -29.000002)
+position = Vector2(71.51001, -29.000002)
 scale = Vector2(0.9398273, 1)
 polygon = PackedVector2Array(-70, 32, -70, 49, -70, 66, -58, 66, -58.000008, 49.028362, -58, 32)
 
 [node name="PausePillar2" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1245281534]
 position = Vector2(81.879395, -29)
 scale = Vector2(0.82550746, 1)
-polygon = PackedVector2Array(-70, 32, -70, 49, -70, 66, -58, 66, -58.000008, 49.028362, -58, 32)
+polygon = PackedVector2Array(-70, 32, -71.32507, 49, -71.32507, 66, -58, 66, -58.000008, 49.028362, -58, 32)
 
-[node name="PauseIconPillar" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1410943437]
-position = Vector2(8, 1)
+[node name="PauseIcon" type="Polygon2D" parent="CanvasLayer/Control/PauseButton" unique_id=1410943437]
+position = Vector2(7, 1)
 polygon = PackedVector2Array(-1, 2, -1, 35, 26, 18)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=136137586]
@@ -196,5 +198,7 @@ shape = SubResource("RectangleShape2D_6phgx")
 
 [connection signal="timeout" from="Node2D/Timer" to="Node2D" method="spawn_enemy"]
 [connection signal="animation_finished" from="Node2D/AnimationPlayer" to="Node2D" method="_start_fight"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/PauseButton" to="CanvasLayer2/Control" method="_on_pause_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/PauseButton" to="CanvasLayer2/Control" method="_on_pause_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Control/PauseButton" to="CanvasLayer2/Control" method="_on_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Node2D" method="start_phase"]

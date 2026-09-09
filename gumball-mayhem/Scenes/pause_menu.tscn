@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://dp7wvhgvoep07" path="res://Scenes/pause_menu.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://v7ixc365pr4g" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
-[ext_resource type="FontFile" uid="uid://buj1bler3xikl" path="res://Assets/AGENCYB.TTF" id="3_1och7"]
+[ext_resource type="FontFile" uid="uid://buj1bler3xikl" path="res://Fonts/AGENCYB.TTF" id="3_1och7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
 shader = ExtResource("1_emv3i")
