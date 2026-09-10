@@ -10,16 +10,20 @@
 script = ExtResource("1_sm2tf")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=34872579]
-bus = &"BGM"
+bus = &"Music"
 
 [node name="TitlePlayer" type="AudioStreamPlayer" parent="." unique_id=706417095]
 stream = ExtResource("2_0hehx")
+bus = &"Music"
 
 [node name="BossPlayer" type="AudioStreamPlayer" parent="." unique_id=1653274850]
 stream = ExtResource("3_mjqhu")
+bus = &"Music"
 
 [node name="DefeatPlayer" type="AudioStreamPlayer" parent="." unique_id=389285332]
 stream = ExtResource("4_5kf6k")
+bus = &"Music"
 
 [node name="VictoryPlayer" type="AudioStreamPlayer" parent="." unique_id=1867772358]
 stream = ExtResource("5_tnn7g")
+bus = &"Music"

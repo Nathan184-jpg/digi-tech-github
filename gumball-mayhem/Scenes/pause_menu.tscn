@@ -10,7 +10,7 @@ shader_parameter/lod = 0.0
 
 [sub_resource type="FontVariation" id="FontVariation_1och7"]
 base_font = ExtResource("3_1och7")
-spacing_glyph = 16
+spacing_glyph = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpi0q"]
 content_margin_left = 16.0
@@ -166,6 +166,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bpi0q")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vmyb1")
 text = "Restart"
 
+[node name="Return_To_MainMenu" type="Button" parent="PanelContainer/VBoxContainer" unique_id=901742633]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_1och7")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_bpi0q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vmyb1")
+text = "Return To Menu"
+
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=837442444]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -180,4 +188,5 @@ libraries/ = SubResource("AnimationLibrary_vmyb1")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Return_To_MainMenu" to="." method="_on_return_to_main_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
