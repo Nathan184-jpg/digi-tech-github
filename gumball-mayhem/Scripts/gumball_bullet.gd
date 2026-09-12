@@ -6,7 +6,9 @@ var direction: int = -1
 @export var sprite_2d: Sprite2D
 
 # Called when the node enters the scene tree for the first time.
-var gumball_colours = ["res://Assets/bluegumball.png", "res://Assets/greengumball.png","res://Assets/orangegumball.png","res://Assets/pinkgumball.png","res://Assets/redgumball.png", "res://Assets/purplegumball.png", "res://Assets/yellowgumball.png"]
+var gumball_colours = ["res://Assets/bluegumball.png", "res://Assets/greengumball.png","res://Assets/orangegumball.png",
+						"res://Assets/pinkgumball.png","res://Assets/redgumball.png", "res://Assets/purplegumball.png",
+						 "res://Assets/yellowgumball.png"]
 
 func _ready() -> void:
 	sprite_2d.texture = load(gumball_colours[randi_range(0, len(gumball_colours) - 1)])

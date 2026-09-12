@@ -8,7 +8,7 @@
 
 [sub_resource type="FontVariation" id="FontVariation_yhxw7"]
 base_font = ExtResource("3_n45e2")
-spacing_glyph = 8
+spacing_glyph = 12
 
 [sub_resource type="FontVariation" id="FontVariation_n45e2"]
 base_font = ExtResource("4_ce3w2")
@@ -66,13 +66,25 @@ texture = ExtResource("2_48xlc")
 
 [node name="Label" type="Label" parent="." unique_id=2134514000]
 layout_mode = 0
-offset_left = 362.0
-offset_top = 78.0
-offset_right = 816.0
-offset_bottom = 145.0
+offset_left = 297.0
+offset_top = 67.0
+offset_right = 890.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0, 0, 0.25882354, 1)
 theme_override_fonts/font = SubResource("FontVariation_yhxw7")
-theme_override_font_sizes/font_size = 48
-text = "GUMBALL MAYHEM"
+theme_override_font_sizes/font_size = 79
+text = "GUMBALLMAYHEM"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="." unique_id=1704922230]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 64.0
+offset_right = 881.0
+offset_bottom = 147.0
+theme_override_fonts/font = SubResource("FontVariation_yhxw7")
+theme_override_font_sizes/font_size = 76
+text = "GUMBALLMAYHEM"
 horizontal_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1267385182]
