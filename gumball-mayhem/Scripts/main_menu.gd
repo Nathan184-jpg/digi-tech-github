@@ -21,3 +21,7 @@ func _quit() -> void:
 
 func _options() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/options.tscn")
+
+
+func _on_menu_navigation_actioned(item: Control) -> void:
+	print("item:", item.text)

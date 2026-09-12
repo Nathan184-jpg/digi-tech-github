@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://da60al84as5ie" path="res://Scripts/panel.gd" id="1_lonnl"]
 
 [node name="Panel" type="Panel" unique_id=1006380763]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 54.0
+offset_bottom = 38.0
 script = ExtResource("1_lonnl")
 
 [node name="Arrows" type="Node2D" parent="." unique_id=1105796469]
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1091718211]
-position = Vector2(39.000004, 0)
+position = Vector2(53.000008, 0)
 scale = Vector2(-0.99332106, 1)
 polygon = PackedVector2Array(-1, 2, -1.0067239, 19, -1.0067239, 36, 26.17482, 18)
 
