@@ -10,6 +10,7 @@ var score: int = 0
 var can_shoot: bool = true
 var health: int = 3
 var lock: = false
+var can_move: bool = true
 
 
 
@@ -27,7 +28,7 @@ func _ready() -> void:
 	if not health_ui == null:
 		health_ui.max_value = health
 		health_ui.value = health
-	
+	can_shoot = false 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -38,7 +39,9 @@ func _physics_process(delta: float) -> void:
 
 	if can_shoot: 
 		_shoot()
- 
+		
+ 	
+	
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept"):

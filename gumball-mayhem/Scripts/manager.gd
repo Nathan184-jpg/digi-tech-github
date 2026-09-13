@@ -10,21 +10,26 @@ var current_enemies: int = 0
 @export var enemy_scene: PackedScene
 @export var fight_ui: Label
 @export var anim: AnimationPlayer
+@export var player: CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().create_timer(0.10).timeout
 	new_fight() 
 	AudioManager.play_boss_music()
-	
 
 
 func new_fight() -> void:
+	player.can_move = false 
+	player.can_move = true
 	fight_ui.text = "FIGHT!"
 	fight_ui.show()
 	await get_tree().create_timer(0.50).timeout
 	fight_ui.hide()
 	anim.play("fight") 
+	player.can_move = true 
+	player.can_shoot = true 
+
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

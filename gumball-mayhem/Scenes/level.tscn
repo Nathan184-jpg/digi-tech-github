@@ -52,10 +52,11 @@ size = Vector2(191.5, 17)
 [node name="Node2D" type="Node2D" unique_id=1348326413]
 rotation = 0.0007406076
 
-[node name="Node2D" type="Node2D" parent="." unique_id=331015874 node_paths=PackedStringArray("fight_ui", "anim")]
+[node name="Node2D" type="Node2D" parent="." unique_id=331015874 node_paths=PackedStringArray("fight_ui", "anim", "player")]
 script = ExtResource("1_tumq0")
 fight_ui = NodePath("../CanvasLayer/Control/Label")
 anim = NodePath("AnimationPlayer")
+player = NodePath("../Sprite2D/CharacterBody2D")
 
 [node name="Timer" type="Timer" parent="Node2D" unique_id=241738477]
 
