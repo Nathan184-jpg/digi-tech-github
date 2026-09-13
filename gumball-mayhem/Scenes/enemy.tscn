@@ -159,6 +159,7 @@ coin_bullet_scene = ExtResource("4_0830c")
 minion_enemies = ExtResource("3_ghaa6")
 bullet_timer = NodePath("Pivot/GumballTimer")
 anim = NodePath("AnimationPlayer")
+knockback_strength = null
 
 [node name="Area2D" type="Area2D" parent="." unique_id=812794600]
 
@@ -170,8 +171,7 @@ material = SubResource("ShaderMaterial_0830c")
 position = Vector2(0.25000763, 1.25)
 scale = Vector2(0.75390625, 0.75390625)
 sprite_frames = SubResource("SpriteFrames_287tu")
-animation = &"Boss death"
-frame_progress = 0.69632536
+animation = &"Coin Slot "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=49119581]
 position = Vector2(0.25000763, 0.25)

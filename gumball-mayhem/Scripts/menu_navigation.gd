@@ -1,5 +1,6 @@
 class_name menu_navigation extends VBoxContainer
 
+# Watched Youtube Tutorial
 
 signal actioned(item: Control)
 
@@ -7,7 +8,9 @@ signal actioned(item: Control)
 
 func _ready() -> void:
 	get_viewport().gui_focus_changed.connect(_on_focus_changed)
+	await get_tree().process_frame
 	configure_focus()
+	update_selection()
 	
 func _unhandled_input(event):	
 	if not visible: return 
@@ -61,6 +64,16 @@ func configure_focus() -> void:
 		else: 
 			item.focus_neighbor_bottom = items[i + 1].get_path()
 			item.focus_next = items[i + 1].get_path() 
+
+
+
+
+	#var empty_style = StyleBoxEmpty.new()
+	
+	#for i in items.size():
+		#var item: Control = items[i]
+		
+		#item.add_theme_stylebox_override("focus", empty_style)
 		
 func _on_item_mouse_entered(item: Control) -> void:
 	item.grab_focus()
@@ -72,7 +85,7 @@ func get_focused_item() -> Control:
 func update_selection() -> void: 
 	var item = get_focused_item() 
 	if is_instance_valid(item) and is_instance_valid(pointer) and visible:
-		pointer.global_position = Vector2(global_position.x -60 , item.global_position.y + item.size.y * 0.5 - 8)
+		pointer.global_position = Vector2(global_position.x -60 , item.global_position.y + item.size.y * 0.35 - 8)
 		
 
 ### signals

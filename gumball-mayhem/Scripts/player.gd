@@ -35,7 +35,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	#elif is_on_floor() and not double_jump:
 		#double_jump = true 
-	
+
+	if can_shoot: 
+		_shoot()
  
 	
 	# Handle jump.
@@ -70,9 +72,7 @@ func _physics_process(delta: float) -> void:
 		
 		
 	pivot.look_at(get_global_mouse_position())
-	
-	if Input.is_action_pressed("ui_shoot") and can_shoot:
-		_shoot()
+
 		
 	move_and_slide() 
 	

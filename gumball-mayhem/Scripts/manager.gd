@@ -42,9 +42,6 @@ func _start_fight(anim_name: StringName) -> void:
 		print(max_enemies)
 		await get_tree().create_timer(3.0).timeout
 
-func start_phase(anim_name: StringName) -> void:
-	pass # Replace with function body.
-
 
 func spawn_enemy() -> void:
 	pass;
